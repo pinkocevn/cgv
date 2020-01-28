@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cgv</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        $(function(){ // 바보가 이거 안 쓰면 안 된다
+            // 배너팝업닫기
+            $('.banner button').click(function(){
+            $('.banner').slideUp();
+            });
+
+            var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.next',
+                prevEl: '.prev',
+            },
+            loop:true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,         
+            },
+            effect: 'fade',
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            });
+        })
+        
+    </script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{background: #fdfcf0;}
+        ul li{
+            list-style: none;
+            display: inline-block;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .banner{
+            height: 80px;
+            text-align: center;
+            background: black;
+        }
+        .banner button{
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: none;
+            border: none;
+        }
+        .wrap_header{
+            position: relative;
+            background: url(../cgv/img/bg_header.gif) repeat-x;
+        }
+        .wrap{
+            position: relative;
+            width: 980px;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+        header{
+            position: relative;
+            width: 980px;
+            height: 200px;
+            margin: 0 auto;
+        } 
+        .login{
+            position: absolute;
+            top: 4%;
+            right: 0;
+            font-size: 13px;
+        }
+        .login li:last-child{
+            padding: 0 5px;
+            background: url(../cgv/img/bg_v_line.gif) no-repeat 0px 4px;}
+        h1{
+            position: absolute;
+            bottom: 72px;
+        }
+        .menu_1{
+            position: absolute;
+            top: 58px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            text-align: center;
+        }
+        .menu_1 ul li{
+            margin-right: 40px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .menu_1 ul li:last-child{margin: 0}
+        .search{
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+        }
+        .search input{
+            width: 284px;
+            height: 30px;
+            margin-right: 54px;
+            text-indent: 5px;
+            box-sizing: border-box;
+        }
+        .search button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55px;
+            height: 30px;
+            background: #e71a0f;
+            color: white;
+            border: none;
+        }
+        .search button:hover{
+            background: rgb(202, 21, 21);
+        }
+        .slide{
+            background: url(../cgv/img/bg_c_bricks.png) repeat-x;
+            height: 450px;
+        }
+        .slide a{
+            display: block;
+        }
+        /*  .slide .wrap{
+            overflow: hidden;
+        }
+        .slide .slide_list{
+            height: 450px;
+        }
+        .slide a:nth-child(2),
+        .slide a:nth-child(3){
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        i{color: white;}
+        .fas{font-size: 20px;}
+        #prev, #next{
+            background: none;
+            border: none;
+            transition: 0.5s;
+        }
+        #prev{
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+        }
+        #next{
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+        }
+        .slide:hover #prev{left:10px;}
+        .slide:hover #next{right:10px;}
+
+        .pagination{
+            position: absolute;
+            left: 50%;
+            bottom: 8px;
+            transform: translateX(-50%);
+        }
+        .pagination button:first-child{
+            background: rgb(202, 21, 21);
+        }
+        .pagination button{
+            width: 10px;
+            height: 10px;
+            border: 1px solid rgb(202, 21, 21);
+            border-radius: 50%;
+        } */
+        .main-slide{
+        position: relative;
+        width: 980px;
+        margin: auto;
+        }
+        .main-slide .t, 
+        .main-slide .m{
+        display: none;
+        }
+        .main-slide img{
+        display: block;
+        width: 100%;
+        }
+        .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 5px;
+        }
+        .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;   
+        background: #ccc;
+        opacity: 1;
+        }
+        .swiper-pagination-bullet-active{
+        background: rgb(109, 109, 109);
+        border: 2px solid red;
+        box-sizing: border-box;
+        }
+        .main-slide .next, 
+        .main-slide .prev{
+        cursor: pointer;
+        z-index: 1;
+        position: absolute;
+        top:50%; 
+        transform: translateY(-50%);
+        color: #ffffff;
+        font-size: 3em;
+        }
+        .main-slide .next{
+        right:0;
+        }
+        .main-slide .prev{
+        left:0;
+        }
+
+
+        .movie,.event{
+            text-align: center;
+            margin: 50px 0;
+        }
+        section .wrap{overflow: hidden;}
+        section h3{
+            width: 980px;
+            margin: 0 auto 30px;
+            background: url(../cgv/img/bg_h3_line.jpg) repeat-x 0 50%;
+        }        
+        section h3 img{
+            padding: 0 15px;
+            background: #fdfcf0;}        
+        .movie iframe{float: left;}        
+        .movie .poster{float: right;}             
+        .event li{float: left; width: 25%;}
+        .event li a{padding-right: 6.66px;}
+        .event li:last-child a{padding-right: 0;}            
+
+        footer{
+            margin: 20px auto 0;
+            padding-bottom: 130px;
+            border-top: 1px solid gray;
+            background: url(../cgv/img/bg_footer_com.gif) repeat-x 0 bottom;
+        }
+        .info{
+            position: relative;
+            height: 70px;
+            font-size: 12px;
+        }
+        .menu_2{
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            margin: 10px 0 15px;
+        }
+        .menu_2 ul li{
+            float: left;
+            padding: 0 10px;
+            background: url(../cgv/img/bg_v_line.gif) no-repeat 0px 4px;
+        }
+        .menu_2 ul li:first-child{background: none;}
+        .sp{
+            display: inline-block;
+            background: url(../cgv/img/sprite.png) no-repeat;
+            width: 120px; height: 65px;
+        }
+        .sp-cj{
+        background-position: -140px -310px;
+        }
+        .info_right{
+            width: 860px;
+            float: right;            
+        }
+        .info small{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            color: gray;
+        }
+        .blind{
+            font-size: 0;
+            position: absolute;
+            left:-9999px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="wrap">
+        <a href="#"><img src="../cgv/img/top_banner.jpg" alt=""></a>
+        <button><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+    <!-- <div class="wrap"> -->
+    <div class="wrap_header">
+        <header>
+            <div class="login">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+                <!-- <a href="#">로그인</a>
+                <a href="#">회원가입</a> -->
+            </div>
+        <h1>
+            <a href="#">
+                <img src="../cgv/img/cgv.png" alt="">
+            </a>
+        </h1>
+            <nav class="menu_1">
+                <img src="../cgv/img/cultureplex.png" alt="">
+                <ul>
+                    <li><a href="#">영화</a></li>
+                    <li><a href="#">예매</a></li>
+                    <li><a href="#">극장</a></li>
+                    <li><a href="#">이벤트&컬쳐</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="search">
+            <div class="text">
+                <input type="text" placeholder="영화제목을 검색하세요">
+            </div>
+            <button>검색</button>
+        </div>
+    </div>
+    <section class="slide">
+        <article class="main-slide">
+        <!-- <article class="main-slide"> -->
+            <div class="swiper-container">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img src="img/slide1.jpg" alt="" class="p">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img src="img/slide2.jpg" alt="" class="p">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <img src="img/slide3.jpg" alt="" class="p">
+                    </a>
+                  </div>
+               </div>
+               <div class="next material-icons">arrow_right</div>
+               <div class="prev material-icons">arrow_left</div>
+               <div class="swiper-pagination"></div>
+            </div>
+         </article>
+        <!-- <div class="wrap">
+            <div class="slide_list">
+                <a href="#">
+                    <img src="../cgv/img/slide1.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../cgv/img/slide2.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../cgv/img/slide3.jpg" alt="">
+                </a>
+            </div>
+            <button id="prev"><i class="fas fa-chevron-left"></i></button>
+            <button id="next"><i class="fas fa-chevron-right"></i></button>
+             <div class="pagination">
+                <button><span class="blind">1</span></button>
+                <button><span class="blind">2</span></button>
+                <button><span class="blind">3</span></button> 
+            </div>
+        </div> -->
+    <!-- </article> -->
+    </section>
+    <section class="movie">
+        <h3>
+            <img src="../cgv/img/h3_movie_selection.gif" alt="">
+        </h3>
+        <div class="wrap">            
+            <iframe width="730" height="388" src="https://www.youtube.com/embed/PVP5ZJuI57c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
+            <div class="poster">
+                <a href="#">
+                    <img src="../cgv/img/coco.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="event">
+        <h3>
+            <img src="../cgv/img/h3_event.gif" alt="">
+        </h3>
+        <div class="wrap">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="../cgv/img/banner1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../cgv/img/banner2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../cgv/img/banner3.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../cgv/img/banner4.jpg" alt="">
+                    </a>
+                </li> 
+            </ul>
+        </div>
+    </section>
+        <footer>
+            <div class="wrap">
+                <div class="menu_2">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">IR</a></li>
+                        <li><a href="#">채용정보</a></li>
+                        <li><a href="#">광고문의</a></li>
+                        <li><a href="#">이용약관</a></li>
+                    </ul>
+                
+            </div>
+            <div class="info">
+                <!-- <img src="../cgv/img/cj_logo.jpg" alt=""> -->
+                <i class="sp sp-cj"><span class="blind"></span>cj</span></i>
+                <div class="info_right">
+                    <p>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br>
+                        대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 사업자정보확인<br>
+                        개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+                    </p>
+                </div>
+                <small>© CJ CGV. All Rights Reserved</small>
+            </div>
+        
+        </footer>
+</body>
+</html>

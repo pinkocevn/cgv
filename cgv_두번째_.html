@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>cgv</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{background: #fdfcf0;}
+        ul li{
+            list-style: none;
+            display: inline-block;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .banner{
+            height: 80px;
+            text-align: center;
+            background: black;
+        }
+        .banner button{
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: none;
+            border: none;
+        }
+        .wrap_header{
+            position: relative;
+            background: url(../cgv/img/bg_header.gif) repeat-x;
+        }
+        .wrap{
+            position: relative;
+            width: 980px;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+        header{
+            position: relative;
+            width: 980px;
+            height: 200px;
+            margin: 0 auto;
+        } 
+        .login{
+            position: absolute;
+            top: 4%;
+            right: 0;
+            font-size: 13px;
+        }
+        .login li:last-child{
+            padding: 0 5px;
+            background: url(../cgv/img/bg_v_line.gif) no-repeat 0px 4px;}
+        h1{
+            position: absolute;
+            bottom: 72px;
+        }
+        .menu_1{
+            position: absolute;
+            top: 58px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            text-align: center;
+        }
+        .menu_1 ul li{
+            margin-right: 40px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .menu_1 ul li:last-child{margin: 0}
+        /* .search{
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+        }
+        .search input{
+            width: 284px;
+            height: 30px;
+            margin-right: 54px;
+            text-indent: 5px;
+            box-sizing: border-box;
+        }
+        .search button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55px;
+            height: 30px;
+            background: #e71a0f;
+            color: white;
+            border: none;
+        } 밑부터는 수정
+        */
+        .search{
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+        }
+        .search .text{
+            width: 250px;
+            margin-right: 60px;
+        }
+        .search input{
+            width: 100%;
+            height: 30px;
+            text-indent: 5px;
+            box-sizing: border-box;
+        }
+        .search button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55px;
+            height: 30px;
+            background: #e71a0f;
+            color: white;
+            border: none;
+        }
+        .search button:hover{
+            background: rgb(202, 21, 21);
+        }
+        .slide{
+            background: url(../cgv/img/bg_c_bricks.png) repeat;
+            height: 450px;
+        }
+        .slide .slide_list{
+            height: 450px;
+        }
+        .slide a:nth-child(2),
+        .slide a:nth-child(3){
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .slide .slide_btn{
+            opacity: 0;
+            width: 980px;
+            height: 450px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slide:hover .slide_btn{opacity: 1;}
+        .pagination{
+            position: absolute;
+            left: 50%;
+            bottom: 8px;
+            transform: translateX(-50%);
+        }
+        .pagination button:first-child{
+            background: rgb(202, 21, 21);
+        }
+        .pagination button{
+            width: 10px;
+            height: 10px;
+            border: 1px solid rgb(202, 21, 21);
+            border-radius: 50%;
+        }
+        i{color: white;}
+        .fas{font-size: 20px;}
+        #prev, #next{
+            background: none;
+            border: none;
+        }
+        #prev{
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+        }
+        #next{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        .movie,.event{
+            text-align: center;
+            margin: 50px 0;
+        }
+        .movie div, .event div{display: inline-block;}
+        #movie_img,
+        #event_img{
+            display: inherit;
+            width: 980px;
+            margin: 0 auto 30px;
+            background: url(../cgv/img/bg_h3_line.jpg) repeat-x 0 50%;
+        }
+        .movie #movie_img img,
+        .event #event_img img{
+            padding: 0 15px;
+            background: #fdfcf0;}
+        footer{
+            margin: 20px auto;
+            border-top: 1px solid gray;
+        }
+        .info{
+            height: 70px;
+            font-size: 12px;
+        }
+        .menu_2{
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            margin: 10px 0 15px;
+        }
+        .menu_2 ul li:first-child{
+            background: none;
+        }
+        .menu_2 ul li{
+            float: left;
+            padding: 0 10px;
+            background: url(../cgv/img/bg_v_line.gif) no-repeat 0px 4px;
+        }
+        .menu_2 ul li:first-child{background: none;}
+        .sp{
+            display: inline-block;
+            background: url(../cgv/img/sprite.png) no-repeat;
+            width: 120px; height: 65px;
+        }
+        .sp-cj{
+        background-position: -140px -310px;
+        }
+        .info_right{
+            width: 860px;
+            height: 100%;
+            float: right;
+            position: relative;
+        }
+        .info p:first-child{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        .info p:last-child{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-align: right;
+            color: gray;
+        }
+        .bg_footer{
+            width: 100%;
+            height: 110px;
+            background: url(../cgv/img/bg_footer_com.gif) repeat 0 bottom;
+        }
+        .blind{
+            font-size: 0;
+            position: absolute;
+            left:-9999px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="wrap">
+        <a href="#"><img src="../cgv/img/top_banner.jpg" alt=""></a>
+        <button><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+    <!-- <div class="wrap"> -->
+    <div class="wrap_header">
+        <header>
+            <div class="login">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+                <!-- <a href="#">로그인</a>
+                <a href="#">회원가입</a> -->
+            </div>
+        <h1>
+            <a href="#">
+                <img src="../cgv/img/cgv.png" alt="">
+            </a>
+        </h1>
+            <nav class="menu_1">
+                <img src="../cgv/img/cultureplex.png" alt="">
+                <ul>
+                    <li><a href="#">영화</a></li>
+                    <li><a href="#">예매</a></li>
+                    <li><a href="#">극장</a></li>
+                    <li><a href="#">이벤트&컬쳐</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="search">
+            <div class="text">
+                <input type="text" placeholder="영화제목을 검색하세요">
+            </div>
+            <button>검색</button>
+        </div>
+    </div>
+    <section class="slide">
+        <div class="wrap">
+            <div class="slide_list">
+                <a href="#">
+                    <img src="../cgv/img/slide1.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../cgv/img/slide2.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../cgv/img/slide3.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide_btn">
+                <button id="prev"><i class="fas fa-chevron-left"></i></button>
+                <button id="next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+             <div class="pagination">
+                <button></button>
+                <button></button>
+                <button></button> 
+            </div>
+        </div>
+    </section>
+    <section class="movie">
+        <div id="movie_img">
+            <img src="../cgv/img/h3_movie_selection.gif" alt="">
+        </div>
+        <div class="wrap">
+            <iframe width="730" height="388" src="https://www.youtube.com/embed/PVP5ZJuI57c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <a href="#">
+                <img src="../cgv/img/coco.jpg" alt="">
+            </a>
+        </div>
+    </section>
+
+    <section class="event">
+        <div id="event_img">
+            <img src="../cgv/img/h3_event.gif" alt="">
+        </div>
+        <div class="event_list wrap">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="../cgv/img/banner1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../cgv/img/banner2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../cgv/img/banner3.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../cgv/img/banner4.jpg" alt="">
+                    </a>
+                </li> 
+            </ul>
+        </div>
+    </section>
+        <footer>
+            <div class="wrap">
+                <div class="menu_2">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">IR</a></li>
+                        <li><a href="#">채용정보</a></li>
+                        <li><a href="#">광고문의</a></li>
+                        <li><a href="#">이용약관</a></li>
+                    </ul>
+                
+            </div>
+            <div class="info">
+                <!-- <img src="../cgv/img/cj_logo.jpg" alt=""> -->
+                <i class="sp sp-cj"><span class="blind"></span>cj</span></i>
+                <div class="info_right">
+                <p>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br>
+                    대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 사업자정보확인<br>
+                    개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+                </p>
+                <p>© CJ CGV. All Rights Reserved</p>
+            </div>
+            </div>
+        
+        </footer>
+        <div class="bg_footer"></div>
+</body>
+</html>
